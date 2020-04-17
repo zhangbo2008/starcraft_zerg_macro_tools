@@ -9,27 +9,39 @@ autohotkey代码如下: 使用方法,安装autohotkey然后把下面东西存成
 
 
 
+
 #IfWinActive  星际争霸 
 
 
 
-;光速注卵,5的快捷键是所有女王
+;光速注卵,5的快捷键是所有女王, 
 $`::
 	SendInput, 5
+	MouseMove,  A_ScreenWidth/2, A_ScreenHeight/2   ;居中点一下
+	Loop 3
+{
+    SendInput v  ; 
+	SendInput {space};
+	MouseClick, left
+}
+	MouseClick, right
 	
+	
+return 
+
+$F1::
+	SendInput, 5
+		MouseMove,  A_ScreenWidth/2, A_ScreenHeight/2   ;居中点一下
 	Loop 4
 {
     SendInput v  ; 
 	SendInput {space};
 	MouseClick, left
 }
-	
 	MouseClick, right
 	
 	
 return 
-
-
 
 
 
@@ -87,6 +99,7 @@ mainp2:
 }
 Send {z up} 
 Return
+
 
 
 
