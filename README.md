@@ -1,6 +1,8 @@
 # starcraft_zerg_macro_tools
 非常牛逼的使用autohotkey,光速4个基地注卵, 和秒买50个狗,50个毒爆,50个农民
 安装autohotkey,然后运行1.ahk脚本即可
+按住z,d,e 大于0.3s再松开 就会触发点击50次的事件
+
 
 或者更懒得童鞋直接下载1.exe 运行就得了.
 
