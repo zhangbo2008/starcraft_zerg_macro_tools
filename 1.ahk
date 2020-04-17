@@ -3,33 +3,55 @@
 
 #IfWinActive  星际争霸 
 
+global b := 2
 
+global yzhou := A_ScreenHeight/2 -100
+global xzhou := A_ScreenWidth/2 -100
+global loopnum := 50
+global delaytime := 300
 
 ;光速注卵,5的快捷键是所有女王, 
 $`::
 	SendInput, 5
-	MouseMove,  A_ScreenWidth/2, A_ScreenHeight/2   ;居中点一下
+SendInput {space};
+	sleep 10
+	MouseMove,  %xzhou% , %yzhou%  ;居中点一下
+	sleep 120
 	Loop 3
+	  
 {
-    SendInput v  ; 
+ 
 	SendInput {space};
+	sleep 10
+	 SendInput v  ; 
+	sleep 10
 	MouseClick, left
+	sleep 10
+
 }
-	MouseClick, right
+	
 	
 	
 return 
 
 $F1::
 	SendInput, 5
-		MouseMove,  A_ScreenWidth/2, A_ScreenHeight/2   ;居中点一下
+SendInput {space};
+	sleep 10
+	MouseMove,  %xzhou% , %yzhou%  ;居中点一下
+	sleep 120
 	Loop 4
+	  
 {
-    SendInput v  ; 
+ 
 	SendInput {space};
+	sleep 10
+	 SendInput v  ; 
+	sleep 10
 	MouseClick, left
+	sleep 10
+
 }
-	MouseClick, right
 	
 	
 return 
@@ -90,5 +112,6 @@ mainp2:
 }
 Send {z up} 
 Return
+
 
 
