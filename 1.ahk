@@ -1,4 +1,4 @@
-
+; 已经根据我自己pc微调了所有sleep参数.
 
 
 #IfWinActive  星际争霸 
@@ -6,7 +6,7 @@
 global b := 2
 
 global yzhou := A_ScreenHeight/2 -100
-global xzhou := A_ScreenWidth/2 -100
+global xzhou := A_ScreenWidth/2 
 global loopnum := 50
 global delaytime := 300
 
@@ -14,45 +14,50 @@ global delaytime := 300
 $`::
 	SendInput, 5
 SendInput {space};
-	sleep 10
+
 	MouseMove,  %xzhou% , %yzhou%  ;居中点一下
-	sleep 120
+	sleep 20
 	Loop 3
 	  
 {
- 
+
 	SendInput {space};
-	sleep 10
+sleep 5
 	 SendInput v  ; 
-	sleep 10
+	
 	MouseClick, left
-	sleep 10
+sleep 5
+	
 
 }
-	
-	
+sleep 5
+	Send,{ 1 }
+	Send,{ 1 }
 	
 return 
 
 $F1::
 	SendInput, 5
 SendInput {space};
-	sleep 10
+
 	MouseMove,  %xzhou% , %yzhou%  ;居中点一下
-	sleep 120
+	sleep 20
 	Loop 4
 	  
 {
- 
+
 	SendInput {space};
-	sleep 10
+sleep 5
 	 SendInput v  ; 
-	sleep 10
+	
 	MouseClick, left
-	sleep 10
+sleep 5
+	
 
 }
-	
+sleep 5
+	Send,{ 1 }
+	Send,{ 1 }
 	
 return 
 
@@ -114,4 +119,57 @@ Send {z up}
 Return
 
 
+$r::
+	KeyWait, r
+	If (A_TimeSinceThisHotkey > 300)
+		SetTimer, mainp3, -1
+	Else
+		SendInput, r
+Return
 
+mainp3:
+	Loop 50
+{
+    Send {r down}  ; 自动重复由连续的按下事件组成 (没有弹起事件).
+      ; 在两次键击之间的毫秒数 (或使用 SetKeyDelay 设置).
+}
+Send {r up} 
+Return
+
+
+
+$h::
+	KeyWait,h
+	If (A_TimeSinceThisHotkey > 300)
+		SetTimer, mainp4, -1
+	Else
+		SendInput, h
+Return
+
+mainp4:
+	Loop 50
+{
+    Send {h down}  ; 自动重复由连续的按下事件组成 (没有弹起事件).
+      ; 在两次键击之间的毫秒数 (或使用 SetKeyDelay 设置).
+}
+Send {h up} 
+Return
+
+
+
+$t::
+	KeyWait,t
+	If (A_TimeSinceThisHotkey > 300)
+		SetTimer, mainp5, -1
+	Else
+		SendInput, t
+Return
+
+mainp5:
+	Loop 50
+{
+    Send {t down}  ; 自动重复由连续的按下事件组成 (没有弹起事件).
+      ; 在两次键击之间的毫秒数 (或使用 SetKeyDelay 设置).
+}
+Send {t up} 
+Return
